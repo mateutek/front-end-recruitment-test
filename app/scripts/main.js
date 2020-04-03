@@ -76,4 +76,16 @@
   }
 
   // Your custom JavaScript goes here
+  const $baconImage = document.querySelector('.js-bacon-image');
+  const $baconBtn = document.querySelector('.js-add-bacon');
+
+  if ($baconBtn) {
+    $baconBtn.addEventListener('click', function() {
+      if ($baconImage) {
+        $baconImage.parentNode.appendChild($baconImage.cloneNode(true));
+      }
+    });
+  }
+
+  console.log();
 })();
