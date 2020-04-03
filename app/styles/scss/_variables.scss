@@ -1,0 +1,26 @@
+$clr-white: rgba(#fff, 1);
+$clr-gray-200: #f2f2f2;
+$clr-gray-300: #ddd;
+$clr-gray: #e5e5e5;
+$clr-gray-600: #d9d9d9;
+
+$primary: #121212;
+$primary-light: #494949;
+
+
+$border-color: $clr-gray;
+$bg: $clr-gray-300;
+$text: $primary;
+$text-light: $primary-light;
+
+$success: #6bd415;
+$error: #f44336;
+$error-light: #f65f54;
+
+
+$tablet-max: 839px;
+$mobile-max: 479px;
+
+@mixin box-shadow($color: $border-color) {
+  box-shadow: 0 2px 0 0 darken($color, 10%);
+}

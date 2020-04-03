@@ -1,0 +1,29 @@
+.btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &__icon {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  &--success {
+    @include box-shadow($success);
+    color: $clr-white;
+    border: 1px solid $success;
+    background-color: $success;
+    cursor: pointer;
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+
+    &:hover {
+      background-color: darken($success, 10%);
+      border-color: darken($success, 10%);
+    }
+  }
+}

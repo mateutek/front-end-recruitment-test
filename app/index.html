@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 
     <!-- Your styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -63,11 +63,12 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
+          <a href="#overview" class="mdl-layout__tab ">Overview</a>
           <a href="#features" class="mdl-layout__tab">Features</a>
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
+          <a href="#checkout" class="mdl-layout__tab is-active">Checkout</a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -75,7 +76,7 @@
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <div class="mdl-layout__tab-panel " id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
               <i class="material-icons">play_circle_filled</i>
@@ -226,6 +227,175 @@
                 Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi. Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum. Aliquip mollit laboris ad labore anim.
               </p>
             </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel is-active" id="checkout">
+          <section class="mdl-grid mdl-grid--no-spacing section--checkout">
+            <form action="#" class="form">
+              <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet steps-cell">
+                <div class="steps">
+                  <div class="step">
+                    <div class="step__header">
+                      <span class="step__number">1</span>
+                      personal information
+                    </div>
+                    <div class="step__rows">
+                      <div class="step__row">
+                        <div class="form__field form__field--half">
+                          <label for="first-name" class="field__label">First name</label>
+                          <input id="first-name" name="first-name"
+                                 type="text" class="field__input" placeholder="Elon">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                        <div class="form__field form__field--half">
+                          <label for="last-name" class="field__label">Last name</label>
+                          <input id="last-name" name="last-name" type="text" class="field__input" placeholder="Musk">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                      <div class="step__row">
+                        <div class="form__field">
+                          <label for="email" class="field__label">Email</label>
+                          <input id="email" name="email" type="email" class="field__input" placeholder="elon@spacex.com">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                      <div class="step__row">
+                        <div class="form__field form__field--half">
+                          <label for="country" class="field__label">Country</label>
+                          <select id="country" name="country" class="field__input">
+                            <option disabled>-- Select country --</option>
+                          </select>
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                        <div class="form__field form__field--half">
+                          <label for="postal-code" class="field__label">Postal Code</label>
+                          <input id="postal-code" name="postal-code" type="text" class="field__input" placeholder="10001">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                      <div class="step__row">
+                        <div class="form__field">
+                          <label for="phone" class="field__label">Phone Number</label>
+                          <input id="phone" name="phone" type="text" class="field__input" placeholder="(212) 692-93-92">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step__header">
+                      <span class="step__number">2</span>
+                      payment details
+                      <i class="material-icons step__icon" role="presentation">lock</i>
+                    </div>
+                    <div class="step__rows">
+                      <div class="step__row">
+                        <div class="form__field">
+                          <label for="credit-card" class="field__label">Credit Card Number</label>
+                          <input id="credit-card" name="credit-card" type="text" class="field__input"
+                                 placeholder="0000 - 0000 - 0000 - 0000">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                      <div class="step__row">
+                        <div class="form__field form__field--half">
+                          <label for="cvc" class="field__label">Security code</label>
+                          <input id="cvc" name="cvc" type="password" class="field__input" placeholder="***">
+                          <div class="tooltip">
+                            <div class="tooltip__content">
+                              3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.
+                            </div>
+                          </div>
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                        <div class="form__field form__field--half">
+                          <label for="expiration-date" class="field__label">Expiration date</label>
+                          <input id="expiration-date" name="expiration-date" type="text" class="field__input"
+                                 autocomplete="off" placeholder="MM / YY">
+                          <span class="field__validation">
+                            Field is empty or invalid
+                          </span>
+                        </div>
+                      </div>
+                      <div class="step__row step__row--btn">
+                        <button type="button" class="btn btn--success">
+                          <i class="material-icons btn__icon" role="presentation">shopping_cart</i>
+                          Complete Purchase
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet checkout-cell">
+                <div class="order-details">
+                  <span class="order-details__title">
+                    Your order
+                  </span>
+                  <div class="order__rows">
+                    <div class="order__row">
+                      <span class="product__name">
+                        Apple Watch Sport
+                      </span>
+                      <span class="product__value">
+                        $ 580
+                      </span>
+                    </div>
+                    <div class="order__row">
+                      <span class="product__name">
+                          Modern Buckle
+                      </span>
+                      <span class="product__value">
+                        $ 380
+                      </span>
+                    </div>
+                  </div>
+                  <div class="order__rows">
+                    <div class="order__row">
+                      <span class="tax__name">
+                          Total purchases
+                      </span>
+                      <span class="tax__value">
+                        $ 960.00
+                      </span>
+                    </div>
+                    <div class="order__row">
+                      <span class="tax__name">
+                          Estimated tax
+                      </span>
+                      <span class="tax__value">
+                        $ 0
+                      </span>
+                    </div>
+                  </div>
+                  <div class="order__total">
+                    <span class="text--strong">
+                        Total
+                    </span>
+                    <span class="total__price">
+                      $ 960
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </form>
           </section>
         </div>
         <footer class="mdl-mega-footer">

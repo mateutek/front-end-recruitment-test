@@ -1,0 +1,152 @@
+.form {
+  display: flex;
+  width: 100%;
+  margin-top: 8px;
+  flex-wrap: wrap;
+
+  &__field {
+    @include box-shadow();
+    display: flex;
+    background-color: $clr-white;
+    border: 1px solid transparent;
+    padding: 8px 10px;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 5px;
+    position: relative;
+    height: 51px;
+    margin-bottom: 19px;
+    transition: border .3s ease-in-out;
+
+    &--half {
+      flex:0 1 calc(50% - 6px);
+
+      @media (max-width: $mobile-max) {
+        flex: 1 100%;
+      }
+    }
+
+    &.is-required {
+      .field__label {
+        &::after {
+          content: '*';
+          color: $error-light;
+          position: absolute;
+          font-size: 0.75rem;
+          top: 0;
+          padding-left: .5rem;
+        }
+      }
+    }
+
+    &.is-valid {
+      .field {
+        border-color: $success;
+        &__label {
+          color: $success;
+        }
+
+        &__validation {
+          opacity: 0;
+        }
+      }
+    }
+
+    &.is-invalid {
+      border-color: $error;
+      .field {
+        &__label,
+        &__input {
+          color: $error;
+        }
+
+        &__validation {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+.field {
+  &__label {
+    font-weight: 700;
+    transition: color .3s ease-in-out;
+    line-height: 1;
+    padding-bottom: 1px;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1.65em;
+    transition: color .3s ease-in-out;
+  }
+
+  &__validation {
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    color: $error;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    font-size: 14px;
+  }
+}
+
+
+.tooltip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+
+  &::after {
+    content: '?';
+    opacity: .5;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+    transition: opacity .3s ease;
+  }
+
+  &__content {
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    position: absolute;
+    display: none;
+    min-width: 250px;
+    min-height: 120px;
+    padding: 20px;
+    z-index: 100;
+    background-color: $clr-white;
+    top: calc(50% - 60px);
+
+    @media (max-width: $tablet-max) {
+      right: 40px;
+      top: -5px;
+    }
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+
+    .tooltip__content {
+      display: block;
+    }
+  }
+}

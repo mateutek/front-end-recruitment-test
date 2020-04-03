@@ -1,0 +1,159 @@
+.mdl-demo .mdl-layout__tab-panel#checkout {
+  background-color: inherit;
+}
+
+.section--checkout {
+  margin: 0 auto;
+  max-width: 910px;
+  font-size: 13px;
+  color: $text;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: $tablet-max ) {
+  .steps-cell {
+    order: 1
+  }
+  .checkout-cell {
+    order: 0;
+  }
+}
+
+
+.steps,
+.order-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.steps {
+  flex: 1;
+}
+
+.step {
+  flex: 1 100%;
+  margin-bottom: 20px;
+
+  &__header {
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  &__number {
+    display: inline-block;
+    color: $clr-white;
+    border: 1px solid $text;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    background-color: $text;
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  &__icon {
+    color: $text-light;
+    margin-left: 11px;
+    font-size: 12px;
+  }
+
+  &__rows {
+    margin-left: 30px;
+
+    @media (max-width: $mobile-max) {
+      margin-left: 0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--btn {
+      margin-top: 22px;
+    }
+
+  }
+}
+
+.order-details {
+  @include box-shadow();
+  background-color: $clr-white;
+  border-radius: 5px;
+  flex: 0 1 274px;
+  margin-top: 40px;
+  font-size: 12px;
+  padding: 18px 16px;
+  position: relative;
+
+  @media (max-width: $tablet-max ) {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  &::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: 1px dashed $border-color;
+    border-radius: 5px;
+    margin: 4px;
+    z-index: 0;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 9px;
+    display: block;
+    z-index: 10;
+  }
+}
+
+.order {
+  &__rows {
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+    &:last-child {
+      border-bottom: 1px dashed $border-color;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    z-index: 10;
+  }
+}
+
+.total {
+  &__price {
+    font-size: 21px;
+    font-weight: 700;
+  }
+}
