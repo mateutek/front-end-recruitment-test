@@ -15,14 +15,16 @@
     border-radius: 5px;
     position: relative;
     height: 51px;
-    margin-bottom: 19px;
+    margin-bottom: 25px;
     transition: border .3s ease-in-out;
 
     &--half {
       flex:0 1 calc(50% - 6px);
+      width: calc(50% - 6px);
 
       @media (max-width: $mobile-max) {
         flex: 1 100%;
+        width: 100%;
       }
     }
 
@@ -85,16 +87,20 @@
     padding: 0;
     line-height: 1.65em;
     transition: color .3s ease-in-out;
+
+    &--select {
+      text-overflow: ellipsis;
+    }
   }
 
   &__validation {
     position: absolute;
-    bottom: -19px;
+    bottom: -20px;
     left: 0;
     color: $error;
     opacity: 0;
     transition: opacity .3s ease-in-out;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 

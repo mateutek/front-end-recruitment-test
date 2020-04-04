@@ -76,16 +76,43 @@
   }
 
   // Your custom JavaScript goes here
+  function attachDialog(selector) {
+    const dialog = document.querySelector(selector);
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+    return dialog;
+  }
+
   const $baconImage = document.querySelector('.js-bacon-image');
   const $baconBtn = document.querySelector('.js-add-bacon');
 
   if ($baconBtn) {
-    $baconBtn.addEventListener('click', function() {
+    $baconBtn.addEventListener('click', () => {
       if ($baconImage) {
         $baconImage.parentNode.appendChild($baconImage.cloneNode(true));
       }
     });
   }
 
-  console.log();
+  const successMessage = attachDialog('#success-message');
+  const errorMessage = attachDialog('#error-message');
+
+  const validator = new Validator('.form');
+  if (validator.isMounted) {
+    validator.form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      validator.validate((valid) => {
+        if (valid) {
+          // ATTACH XHR code to send the form data
+          successMessage.showModal();
+        } else {
+          errorMessage.showModal();
+        }
+      });
+    });
+  }
 })();
