@@ -551,7 +551,7 @@
                       <div class="step__row">
                         <div class="form__field">
                           <label for="phone" class="field__label">Phone Number</label>
-                          <input id="phone" name="phone" type="text" class="field__input" placeholder="(212) 692-93-92">
+                          <input id="phone" name="phone" type="tel" class="field__input" placeholder="(212) 692-93-92">
                           <span class="field__validation">
                             Field is empty or invalid
                           </span>
@@ -567,7 +567,7 @@
                     </div>
                     <div class="step__rows">
                       <div class="step__row">
-                        <div class="form__field">
+                        <div class="form__field form__field--cc" data-type="credit" data-credit-company="generic">
                           <label for="credit-card" class="field__label">Credit Card Number</label>
                           <input id="credit-card" name="credit-card" type="text" class="field__input"
                                  placeholder="0000 - 0000 - 0000 - 0000">
@@ -577,7 +577,7 @@
                         </div>
                       </div>
                       <div class="step__row">
-                        <div class="form__field form__field--half" data-type="text">
+                        <div class="form__field form__field--half" data-type="cvv">
                           <label for="cvc" class="field__label">Security code</label>
                           <input id="cvc" name="cvc" type="password" class="field__input" placeholder="***">
                           <div class="tooltip">
@@ -589,7 +589,7 @@
                             Field is empty or invalid
                           </span>
                         </div>
-                        <div class="form__field form__field--half">
+                        <div class="form__field form__field--half" data-type="exp">
                           <label for="expiration-date" class="field__label">Expiration date</label>
                           <input id="expiration-date" name="expiration-date" type="text" class="field__input"
                                  autocomplete="off" placeholder="MM / YY">

@@ -28,6 +28,39 @@
       }
     }
 
+    &--cc {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 16px);
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/cards.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 32px 128px;
+      }
+
+      &[data-credit-company="american-express"] {
+        &:after{
+          background-position: 0 -32px;
+        }
+      }
+
+      &[data-credit-company="visa"] {
+        &:after{
+          background-position: 0 -64px;
+        }
+      }
+
+      &[data-credit-company="mastercard"] {
+        &:after{
+          background-position: 0 -96px;
+        }
+      }
+    }
+
     &.is-required {
       .field__label {
         &::after {
@@ -87,6 +120,12 @@
     padding: 0;
     line-height: 1.65em;
     transition: color .3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% - 16px);
+    padding-top: 20px;
+    z-index: 0;
 
     &--select {
       text-overflow: ellipsis;
@@ -111,6 +150,7 @@
   bottom: 0;
   top: 0;
   cursor: pointer;
+  z-index: 10;
 
   &::after {
     content: '?';
@@ -127,6 +167,7 @@
     right: 10px;
     top: calc(50% - 10px);
     transition: opacity .3s ease;
+    z-index: 10;
   }
 
   &__content {
